@@ -10,7 +10,7 @@
                 <form action="{{ route('vehicle.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Type:</label>
+                        <label for ="type">Type:</label>
                         <br>
                         <select name="type" class="form-select" id="type" required>>
                             <option value="" selected disabled>Pilih Jenis Kendaraan</option>
@@ -19,10 +19,10 @@
                             <option value="truck">Truck</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="ccarimg">Image :</label>
                         <input type="file" class="form-control" id="carimg" name="carimg" accept="image/*" required>
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="model">Model :</label>
                         <input type="text" class="form-control" id="model" name="model" required>
@@ -46,31 +46,31 @@
                     <div id="car">
                         <div class="form-group">
                             <label for="tipebbm">Tipe Bahan Bakar :</label>
-                            <input type="text" class="form-control" id="tipebbm" name="tipebbm" required>
+                            <input type="text" class="form-control" id="tipebbm" name="tipebbm">
                         </div>
                         <div class="form-group">
                             <label for="luasbagasi">Luas Bagasi :</label>
-                            <input type="number" class="form-control" id="luasbagasi" name="luasbagasi" required>
+                            <input type="number" class="form-control" id="luasbagasi" name="luasbagasi">
                         </div>
                     </div>
                     <div id="motor">
                         <div class="form-group">
                             <label for="kapasitasbbm">Kapasitas Bahan Bakar :</label>
-                            <input type="text" class="form-control" id="kapasitasbbm" name="kapasitasbbm" required>
+                            <input type="text" class="form-control" id="kapasitasbbm" name="kapasitasbbm">
                         </div>
                         <div class="form-group">
                             <label for="luasbagasi">Luas Bagasi :</label>
-                            <input type="number" class="form-control" id="luasbagasi" name="luasbagasi" required>
+                            <input type="number" class="form-control" id="luasbagasi" name="luasbagasi">
                         </div>
                     </div>
                     <div id="truck">
                         <div class="form-group">
                             <label for="wheelcount">Wheel Count:</label>
-                            <input type="text" class="form-control" id="wheelcount" name="wheelcount" required>
+                            <input type="text" class="form-control" id="wheelcount" name="wheelcount">
                         </div>
                         <div class="form-group">
                             <label for="cargoarea">Cargo Area :</label>
-                            <input type="number" class="form-control" id="cargoarea" name="cargoarea" required>
+                            <input type="number" class="form-control" id="cargoarea" name="cargoarea">
                         </div>
                     </div>
                     <br>

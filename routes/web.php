@@ -3,6 +3,8 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\VehicleController;
+use App\Models\Customer;
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +22,16 @@ Route::get('/', function () {
     return view('layout.customer');
 });
 Route::get('/form', function () {
-    return view('orderform');
+    return view('form');
 });
 Route::get('/vehicleform', function () {
     return view('vehicleform');
+});
+Route::get('/orderform', function () {
+    return view('orderform', [
+        'customers' => Customer::all(),
+        'vehicles' => Vehicle::all(),
+    ]);
 });
 Route::get('/editcustomer', function () {
     return view('customeredit');
@@ -31,8 +39,11 @@ Route::get('/editcustomer', function () {
 Route::get('/vehicle', function () {
     return view('vehicle');
 });
+Route::get('/order', function () {
+    return view('order');
+});
 
-Route::resource('vehicle',VehicleController::class);
-Route::resource('orderform',OrderController::class);
 Route::resource('customer',CustomerController::class);
+Route::resource('vehicle',VehicleController::class);
+Route::resource('order',OrderController::class);
 Route::get('/', [CustomerController::class, 'index']);

@@ -24,13 +24,13 @@
     <td>{{$data->nama}}</td>
     <td>{{$data->alamat}}</td>   
     <td>{{$data->notelp}}</td>
-    <td><img src="{{asset('/storage/'.$data->idnumber)}}"></td>
+    <td><img src="{{asset($data->idnumber)}}" class="img-fluid"></td>
     <td>
-    <form action="{{ route('customer.destroy', $data->customerID) }}" method="post">
+    <form action="{{ route('customer.destroy', $data->id) }}" method="post">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger d-flex">Delete<i class="fa-duotone fa-person fa-flash ms-1"></i></button>
-        <a href="{{route('customer.edit', $data->customerID)}}"  class="btn btn-warning">Edit</a>
+        <a href="{{route('customer.edit', $data->id)}}"  class="btn btn-warning">Edit</a>
     </form>
     </td>
   </tr>

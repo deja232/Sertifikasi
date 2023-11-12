@@ -4,26 +4,28 @@
 
 @section('content')
 
-<div class="container text-light ">
+<div class="container text-light">
     <div class="row">
-        <div class="col" style="color:black">
-            <form action="{{route('customer.store')}}" method="post" enctype="multipart/form-data">
+        <div class="col">
+            <form action="{{ route('order.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="nama">Nama :</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required>
+                    <label for="customerID" class="form-label">Customer</label>
+                    <select name="customer_id" id="customerID" class="form-select">
+                        <option value="" selected disabled>Select Customer</option>
+                        @foreach ($customers as $customer)
+                            <option value="{{ $customer->id }}">{{ $customer->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="alamat">Alamat :</label>
-                    <input type="text" class="form-control" id="alamat" name="alamat" required>
-                </div>                
-                <div class="form-group">
-                    <label for="notelp">No.Telp :</label>
-                    <input type="number" class="form-control" id="notelp" name="notelp" required>
-                </div>
-                <div class="form-group">
-                    <label for="idnumber">ID Card :</label>
-                    <input type="file" class="form-control" id="idnumber" name="idnumber" accept="image/*" required>
+                    <label for="vehicleID" class="form-label">Vehicle</label>
+                    <select name="vehicle_id" id="vehicleID" class="form-select">
+                        <option value="" selected disabled>Select Vehicle</option>
+                        @foreach ($vehicles as $vehicle)
+                            <option value="{{ $vehicle->id }}">{{ $vehicle->type }} - {{ $vehicle->model }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary mb-5 me-1"><i class="fa-solid fa-check me-1"></i>Submit</button>

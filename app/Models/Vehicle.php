@@ -9,5 +9,11 @@ class Vehicle extends Model
 {
     use HasFactory;
     protected $table = "vehicles";
-    protected $fillable =['carimg','model','year','price','passenger','manufaktur','tipebbm','kapasitasbbm','wheelcount','luasbagasi','cargoarea'];
+    protected $guarded = ['id'];
+
+
+    public function Order()
+    {
+        return $this->hasMany((Order::class));
+    }
 }

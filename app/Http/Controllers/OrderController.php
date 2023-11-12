@@ -11,7 +11,8 @@ class OrderController extends Controller
 {
     
     public function index(){
-        $customers = DB::table('orders')->get();
+        $orders = Order::all();
+        return view ('order', ['orders' => $orders]);
     }
 
     public function create(){
@@ -22,10 +23,10 @@ class OrderController extends Controller
 
 
         Order::create([
-            'orderDate' => 'orderDate',
-            'quantity' => 'quantity',
-            'total' => 'total'
+            'customer_id' => $request->customer_id,
+            'vehicle_id' => $request->vehicle_id,
         ]);
+        return redirect()->route('order.index');
     }
 
 

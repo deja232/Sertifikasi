@@ -12,7 +12,7 @@
                     <a class="nav-link {{ $active_order ?? '' }}" href="/vehicle">Vehicle<i class="fa-solid fa-cart-shopping fa-fade ms-1"></i></a>
                 </li>
                 <li class="nav-item" style="margin:5px">
-                    <a class="nav-link {{ $active_customer ?? '' }}" href="/motor">Order<i class="fa-solid fa-person fa-fade ms-1"></i></a>
+                    <a class="nav-link {{ $active_customer ?? '' }}" href="/order">Order<i class="fa-solid fa-person fa-fade ms-1"></i></a>
                 </li>
             </ul>
         </div>

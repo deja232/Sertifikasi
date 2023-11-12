@@ -19,9 +19,9 @@ class VehicleController extends Controller
     }
 
     public function store(Request $request){
-
+        // dd($request->model);
         Vehicle::create([
-            'carimg' => $request->carimg,
+            // 'carimg' => $request->carimg,
             'model' => $request->model,
             'year' => $request->year,
             'price' => $request->price,
@@ -34,6 +34,7 @@ class VehicleController extends Controller
             'cargoarea' => $request->cargoarea,
             'type' => $request->type,
         ]);
+  
         return redirect()->route('vehicle.index');
     }
     public function destroy($id){

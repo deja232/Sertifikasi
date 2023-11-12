@@ -46,14 +46,21 @@ class CustomerController extends Controller
 
     public function store(Request $request){
 
-        $image=$request->file('idnumber');
-        $image-> StoreAs('public/storage', $image->hashName());
+        $image = $request->file('idnumber');
+
+        $path = public_path('images/');
+        !is_dir($path) &&
+            mkdir($path, 0777, true);
+
+        $imagePath = 'images/' . $image->hashName();
+
+        $request->idnumber->move($path, $image->hashName());
 
         Customer::create([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'notelp' => $request->notelp,
-            'idnumber' => $image->hashName(),
+            'idnumber' => $imagePath,
         ]);
 
         return redirect()->route('customer.index');
