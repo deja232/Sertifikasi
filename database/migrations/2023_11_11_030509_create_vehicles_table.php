@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->string('carimg');
+            $table->string('model');
+            $table->string('price');
+            $table->string('year');
+            $table->string('passenger');
+            $table->string('manufaktur');
+            $table->string('tipebbm');
+            $table->string('kapasitasbbm');
+            $table->string('wheelcount');
+            $table->string('luasbagasi');
+            $table->string('cargoarea');
             $table->timestamps();
         });
     }
