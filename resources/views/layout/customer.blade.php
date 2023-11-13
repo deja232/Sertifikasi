@@ -21,6 +21,7 @@
 <tbody>
     @foreach($customer as $data)
   <tr>
+    <td>{{$data->id}}</td>
     <td>{{$data->nama}}</td>
     <td>{{$data->alamat}}</td>   
     <td>{{$data->notelp}}</td>

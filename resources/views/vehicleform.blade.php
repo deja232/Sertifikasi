@@ -19,10 +19,6 @@
                             <option value="truck">Truck</option>
                         </select>
                     </div>
-                    {{-- <div class="form-group">
-                        <label for="ccarimg">Image :</label>
-                        <input type="file" class="form-control" id="carimg" name="carimg" accept="image/*" required>
-                    </div> --}}
                     <div class="form-group">
                         <label for="model">Model :</label>
                         <input type="text" class="form-control" id="model" name="model" required>

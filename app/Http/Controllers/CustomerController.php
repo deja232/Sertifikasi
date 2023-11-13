@@ -13,17 +13,15 @@ class CustomerController extends Controller
     public function index(){
         $customers = Customer::all();
         return view('layout.customer', ['customer' => $customers]);
-        // $form = DB::table('customers')->get();
-        // return view('layout.customer',['customer' => $form]);
     }
 
-    public function edit($customerID){
-        $customers = Customer::findOrFail($customerID);
+    public function edit($id){
+        $customers = Customer::findOrFail($id);
         return view('customeredit', ['customer' => $customers]);
     }
 
-    public function update(Request $request, $customerID){
-        $customers = Customer::findOrFail($customerID);
+    public function update(Request $request, $id){
+        $customers = Customer::findOrFail($id);
         $image = $request -> file('idnumber');
         if($image){
             Storage::delete($request->img);
@@ -65,8 +63,8 @@ class CustomerController extends Controller
 
         return redirect()->route('customer.index');
     }
-    public function destroy($customerID){
-        $customers=Customer::findOrFail($customerID);
+    public function destroy($id){
+        $customers = Customer::findOrFail($id);
         $customers->delete();
 
         return redirect()-> route('customer.index');

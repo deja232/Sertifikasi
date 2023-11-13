@@ -31,8 +31,6 @@
     <td>{{$data->year}}</td>
     <td>{{$data->passenger}}</td>
     <td>{{$data->manufaktur}}</td>   
-    <td>{{$data->tipebbm}}</td>
-    <td>{{$data->luasbagasi}}</td>
     <td>
         <button  type="button" class="btn btn-warning d-flex">Edit</button>
         <form action="{{ route('vehicle.destroy', $data->id) }}" method="post">
