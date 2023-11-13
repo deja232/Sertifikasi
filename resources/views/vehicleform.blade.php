@@ -19,6 +19,7 @@
                             <option value="truck">Truck</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="model">Model :</label>
                         <input type="text" class="form-control" id="model" name="model" required>

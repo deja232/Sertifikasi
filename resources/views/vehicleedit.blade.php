@@ -1,4 +1,4 @@
-@extends('layout.mainlayout')
+{{-- @extends('layout.mainlayout')
 
 @section('title', 'Order')
 
@@ -7,7 +7,7 @@
 <div class="container text-light ">
     <div class="row">
         <div class="col" style="color:black">
-            <form action="{{route('vehicle.update', $vehicle->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('vehicle.update', $vehicle->id)}}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method("PUT")
                 <div class="form-group">
@@ -77,4 +77,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
