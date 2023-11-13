@@ -28,6 +28,12 @@ class OrderController extends Controller
         ]);
         return redirect()->route('order.index');
     }
+    public function destroy($customer_id){
+        $orders=Order::findOrFail($customer_id);
+        $orders->delete();
+
+        return redirect()-> route('order.index');
+    }
 
 
 }
